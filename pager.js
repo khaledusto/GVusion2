@@ -1,0 +1,5 @@
+// Pre Selection
+for(var pres=document.querySelectorAll("pre,kbd,blockquote,td"),i=0;i<pres.length;i++)pres[i].addEventListener("dblclick",function(){var e=getSelection(),t=document.createRange();t.selectNodeContents(this),e.removeAllRanges(),e.addRange(t)},!1);
+// Replace Comments
+function cdClear(){var e=document.getElementById("codes");e.value="",e.focus(),document.getElementById("cvrt").disabled=!1}function cdConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),d=document.getElementById("opt2"),l=document.getElementById("opt3"),n=document.getElementById("opt4"),o=document.getElementById("opt5");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/&/g,"&amp;")),d.checked&&(t=t.replace(/'/g,"&#039;")),l.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),o.checked&&(t=t.replace(/>/g,"&gt;")),t=-1!=t.lastIndexOf("\n")||t.length>40?t.replace(/^/,'<i rel="pre">'):t.replace(/^/,'<i rel="code">'),t=t.replace(/$/,"</i>"),e.value=t,e.focus(),e.select()}
+//]]>
